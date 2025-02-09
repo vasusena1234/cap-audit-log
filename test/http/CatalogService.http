@@ -1,0 +1,43 @@
+@server = http://localhost:4004
+@auth = Authorization: Basic alice:
+
+
+### Books
+# @name Books_GET
+GET {{server}}/odata/v4/catalog/Books
+{{auth}}
+
+
+### Books
+# @name Books_POST
+POST {{server}}/odata/v4/catalog/Books
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": 20904954,
+  "title": "title-20904954",
+  "stock": 96
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/odata/v4/catalog/Books/20904954
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": 20904954,
+  "title": "title-20904954",
+  "stock": 96,
+  "validFrom": "2020-03-24T00:00:00.000Z",
+  "validTo": "2014-02-02T00:00:00.000Z"
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/odata/v4/catalog/Books/20904954
+Content-Type: application/json
+{{auth}}
